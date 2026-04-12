@@ -5,7 +5,7 @@ import pandas as pd
 from email.mime.text import MIMEText
 import os
 
-my_email = os.environ["MY_EMAIL"]
+my_gmail = os.environ["MY_GMAIL"]
 email_password = os.environ["EMAIL_PASSWORD"]
 
 MY_LAT = 40.708911
