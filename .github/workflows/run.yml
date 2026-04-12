@@ -2,12 +2,15 @@ name: Run Daily Script
 
 on:
   schedule:
-    - cron: "55 21 * * *"   # runs every 9pm UTC and 5pm NYC time
+    - cron: "55 21 * * *"
   workflow_dispatch:
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    env:
+      MY_EMAIL: ${{ secrets.MY_EMAIL }}
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
 
     steps:
       - name: Checkout code
@@ -19,7 +22,33 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests pandas
+        run: pip install -r requirements.txt
 
       - name: Run script
         run: python main.py
+
+# name: Run Daily Script
+
+# on:
+#   schedule:
+#     - cron: "55 21 * * *"   # runs every 9pm UTC and 5pm NYC time
+#   workflow_dispatch:
+
+# jobs:
+#   run-script:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.11"
+
+#       - name: Install dependencies
+#         run: pip install requests pandas
+
+#       - name: Run script
+#         run: python main.py
