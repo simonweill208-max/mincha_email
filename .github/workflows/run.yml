@@ -2,7 +2,7 @@ name: Run Daily Script
 
 on:
   schedule:
-    - cron: "0 21 * * *"   # runs every 9pm UTC and 5pm NYC time
+    - cron: "55 21 * * *"   # runs every 9pm UTC and 5pm NYC time
   workflow_dispatch:
 
 jobs:
