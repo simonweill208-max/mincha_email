@@ -3,6 +3,7 @@ import datetime as dt
 import smtplib
 import pandas as pd
 from email.mime.text import MIMEText
+import os
 
 my_gmail = "codetesting2082@gmail.com"
 email_password = "uugvbnpamtmjlllp"
