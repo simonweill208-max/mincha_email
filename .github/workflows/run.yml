@@ -9,7 +9,7 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     env:
-      MY_EMAIL: ${{ secrets.MY_EMAIL }}
+      MY_GMAIL: ${{ secrets.MY_GMAIL }}
       EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
 
     steps:
