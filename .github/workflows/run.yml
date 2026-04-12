@@ -2,7 +2,7 @@ name: Run Daily Script
 
 on:
   schedule:
-    - cron: "55 21 * * *"
+    - cron: "15 22 * * *"
   workflow_dispatch:
 
 jobs:
