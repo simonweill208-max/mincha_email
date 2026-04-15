@@ -11,6 +11,8 @@ email_password = os.environ["EMAIL_PASSWORD"]
 MY_LAT = 40.708911
 MY_LONG = -73.967388
 
+full_date = f"{dt.datetime.now().month}/{dt.datetime.now().day}/{dt.datetime.now().year}"
+
 parameters = {
     "lat": MY_LAT,
     "lng": MY_LONG,
@@ -36,7 +38,7 @@ zman_mariv_60 = zman_mariv_60_long_format.strftime("%-I:%M")
 
 
 
-message = f"זמן מעריב – 72 דקות | {zman_mariv_72}\nזמן מעריב – 60 דקות | {zman_mariv_60}"
+message = f"{full_date}\nזמן מעריב – 72 דקות | {zman_mariv_72}\nזמן מעריב – 60 דקות | {zman_mariv_60}"
 msg = MIMEText(message, "plain", "utf-8")
 
 emails_file_path = "people.csv"
